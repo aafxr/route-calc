@@ -1,7 +1,7 @@
 import { CoordinatesType } from "./CoordinatesType";
 
 export interface PlaceType {
-    type: 2;
+    type: number;
     id: string;
     name: string;
     formatted_address: string;

@@ -1,5 +1,8 @@
+import { HOTEL, PLACE, ROAD } from "../constants";
 import { CoordinatesType } from "../types/CoordinatesType";
 import { HotelType } from "../types/HotelType";
+import { PointType } from "../types/PointType";
+import { RouteType } from "../types/RouteType";
 
 const {sin, cos, asin, min, sqrt, round, ceil, floor, PI} = Math
 
@@ -63,58 +66,61 @@ class Route {
         return hours + ":" + (_minutes < 10 ? '0' + _minutes : _minutes);
     }
 
-    nextStep(route, points, point = false) {
+    nextStep(route: RouteType, points: PointType, point = false) {
+        if(!this.hotel) 
+            throw new Error('Set hotel before calc route')
 
-        const step = route['steps']?.length || 0;
+        const step = route.steps.length || 0;
         //echo "step begin: ".step." runtime ".(time() - this.timestamp)."<br />";
         /*echo '<pre>';
         print_r(route);
         echo '</pre>'; */
         if(step == 0) {
-            route["day"] = 1;
-            route['stepList'] = [];
-            route["overTime"] = 0;
-            route["time"] = 13*60 - this.density * 60 / 2;
-            route['bestDayTimeEnd'] = 13*60 + this.density * 60 / 2;
-            route["position"] = this.hotel?['position'];
-            route["score"] = 0;
-            route["road"] = {
-                'distance': 0,
-                'time': 0
+            route.day = 1;
+            route.stepList = [];
+            route.overTime = 0;
+            route.time = 13*60 - this.density * 60 / 2;
+            route.bestDayTimeEnd = 13*60 + this.density * 60 / 2;
+            route.position = this.hotel.position;
+            route.score = 0;
+            route.road = {
+                  distance: 0,
+                  time: 0
             };
-            route['steps'][] = [
-                'type': 'hotel',
-                'day' : route['day'],
-                'timeStart': route['time'],
-                'timeEnd': route['time'],
-                'duration': 0,
-                'place': this.hotel
-            ];
-            route["price"] += this.hotel['price'];
+            route.steps[route.steps.length] = {
+                type: HOTEL,
+                day : route.day,
+                timeStart: route.time,
+                timeEnd: route.time,
+                duration: 0,
+                place: this.hotel.id
+            };
+            route.price += this.hotel.price;
         } else {
 
             // get road
-            roadDist = this.distAB(route['position'],point['position']);
-            roadDuration = this.getDuration(roadDist);
-            route['road']['distance'] += roadDist;
-            route['road']['time'] += roadDuration;
-            route['steps'][] = [
-                'type' => 'road',
-                'distance' => roadDist,
-                'duration' => roadDuration,
-                'day'  => route['day'],
-                'timeStart' => route['time'],
-                'timeEnd' => (route['time'] += roadDuration),
-            ];
+            let roadDist = this.distAB(route['position'],point.position);
+            let roadDuration = this.getDuration(roadDist);
+            route.road.distance += roadDist;
+            route.road.time += roadDuration;
+            route.time += roadDuration
+            route.steps[route.steps.length] = {
+                type: ROAD,
+                distance: roadDist,
+                duration: roadDuration,
+                day : route.day,
+                timeStart: route.time,
+                timeEnd: route.time,
+            };
 
-            route['steps'][] = [
-                'type' => 'place',
-                'day'  => route['day'],
-                'duration' => point['duration'] * this.depth,
-                'timeStart' => route['time'],
-                'timeEnd' =>  (route['time'] += point['duration']* this.depth),
-                'place' => point['id']
-            ];
+            route.steps[route.steps.length] = {
+                type: PLACE,
+                day : route['day'],
+                duration: point['duration'] * this.depth,
+                timeStart: route['time'],f
+                timeEnd:  (route['time'] += point['duration']* this.depth),
+                place: point['id']
+            };
             route['stepList'][] = point['id'];
             route['position'] = point['position'];
             route['score'] += point['score'];

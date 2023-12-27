@@ -1,8 +1,9 @@
 export interface StepType{
     type: number;
     day: number;
-    timeStart: Date
-    timeEnd: Date
+    timeStart: number
+    timeEnd: number
     duration: number
     place: string
+    distance: number
 }

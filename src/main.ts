@@ -1,6 +1,8 @@
 import { hotelService } from "./services/HotelService";
 import { placeService } from "./services/PlaceService";
+import Graph from './data-structur/Graph'
 import "./style.css";
+import { PlaceType } from "./types/PlaceType";
 
 const app = document.querySelector('#app')!
 
@@ -22,6 +24,12 @@ hotelService.getAll().then((hotels) => {
   }
   result += "</table>";
   app.innerHTML += result
+});
+
+
+placeService.getAll().then((places) => {
+  const graph = new Graph<PlaceType>()
+  
 });
 
 
