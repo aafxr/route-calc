@@ -1,0 +1,44 @@
+body{
+  width: 100%;
+  min-height: 100vh;
+}
+
+#app{
+  max-width: 1000px;
+  margin: 1rem auto 0;
+}
+
+table + table{
+  margin-top: 1rem;
+}
+th,td:first-child{
+  text-align: center;
+}
+
+th{
+  background-color: #747bff;
+}
+
+tr{
+  background-color: gainsboro;
+}
+
+td{
+  padding: 8px 16px;
+}
+
+th:nth-child(1){
+  width: 10%;
+}
+
+th:nth-child(2){
+  width: 20%;
+}
+
+th:nth-child(3){
+  width: 40%;
+}
+
+th:nth-child(4){
+  /* width: 35%; */
+}
