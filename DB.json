@@ -1,0 +1,105 @@
+{
+  "places": [
+    {
+      "id": "feaz",
+      "name": "Остров Патмос в Горном Алтае",
+      "formatted_address": "Советская ул., 74, село Чемал",
+      "location": [51.398534871211545, 86.00038333988265],
+      "position": [51.398534871211545, 86.00038333988265],
+      "photos": [
+        "https://api.travelerapp.ru/upload/uf/940/6x66se73b6jedw6w3qtokwus9tnom8k7.jpg"
+      ]
+    },
+    {
+      "id": "awzerv",
+      "name": "Семинский перевал",
+      "formatted_address": "Онгудайский район, Республика Алтай",
+      "location": [51.03414198313188, 85.61670957627916],
+      "position": [51.03414198313188, 85.61670957627916]
+    },
+    {
+      "id": "q60",
+      "name": "Гостиный двор Алтай",
+      "formatted_address": "Бийская ул., 23, Горно-Алтайск, Респ. Алтай",
+      "location": [51.973164267230906, 85.90383979758126],
+      "position": [51.973164267230906, 85.90383979758126],
+      "photos": [
+        "https://api.travelerapp.ru/upload/uf/aaf/du1cyxc24973j6mzhmehaphbp99hn6eh.jpg"
+      ]
+    },
+    {
+      "id": "q61",
+      "name": "оз. Нижне-Мультинское",
+      "formatted_address": "Респ. Алтай, 649495",
+      "location": [50.01091111978751, 85.83111106018703],
+      "position": [50.01091111978751, 85.83111106018703],
+      "photos": [
+        "https://api.travelerapp.ru/upload/uf/381/iv7jucf86yol8fr8xgjj2io1km5jv15l.jpg"
+      ]
+    },
+    {
+      "id": "q62",
+      "name": "Астраханский Кремль",
+      "formatted_address": "ул. В. Тредиаковского, 2, Астрахань, Астраханская обл.",
+      "location": [46.3496095842097, 48.0341109550027],
+      "position": [46.3496095842097, 48.0341109550027],
+      "photos": [
+        "https://api.travelerapp.ru/upload/uf/b28/5d10gwi8evott5wfe74zsjrx1k9w1c68.jpg",
+        "https://api.travelerapp.ru/upload/uf/4f9/kbosl4otil0jg2mranp0vu1h080ftxcs.jpg"
+      ]
+    },
+    {
+      "id": "q63",
+      "name": "скала Красные Ворота",
+      "formatted_address": "Респ. Алтай",
+      "location": [50.364579398769074, 87.63352633983526],
+      "position": [50.364579398769074, 87.63352633983526],
+      "photos": [
+        "https://api.travelerapp.ru/upload/uf/f11/874zg6ac0qb1jjcasl5f539fy6yjjte8.jpg"
+      ]
+    },
+    {
+      "id": "q64",
+      "name": "Церковь Макария Преподобного Алтайского",
+      "formatted_address": "Коммунистический просп., 146, Горно-Алтайск, Респ. Алтай",
+      "location": [51.96127817085692, 85.91567553990879],
+      "position": [51.96127817085692, 85.91567553990879],
+      "photos": [
+        "https://api.travelerapp.ru/upload/uf/802/2f4fxrw3jo5nhbc5srgss700xy4gn252.jpg"
+      ]
+    },
+    {
+      "id": "kdfaf",
+      "name": "Кафедральный собор",
+      "formatted_address": "ул. Канта, 1, Калининград",
+      "location": [54.706426, 20.512168],
+      "position": [54.706426, 20.512168],
+      "photos": [
+        "https://api.travelerapp.ru/upload/uf/386/pp9v83lu4xfg60rh2d0evzty4n9ntpzf.jpg"
+      ]
+    },
+    {
+      "id": "kkkk",
+      "name": "Куршская коса",
+      "formatted_address": "Калининградская область, Зеленоградский муниципальный округ, Куршская коса",
+      "location": [55.112324, 20.757228],
+      "position": [55.112324, 20.757228],
+      "photos": [
+        "https://api.travelerapp.ru/upload/uf/7a9/fgcurbi2hxav5j1h9lokoox0mjcvh6wh.jpg"
+      ]
+    }
+  ],
+  "hotels": [
+    {
+      "id": "q34",
+      "name": "Эко-отель «Алтика»",
+      "formatted_address": "Республика Алтай, Майминский район, Р-256 Чуйский тракт, 490-й километр",
+      "location": [52.030266987647146, 85.91588555340412],
+      "position": [52.030266987647146, 85.91588555340412],
+      "photos": [
+        "https://api.travelerapp.ru/upload/uf/578/j4oxc2wye4zk5439ui2pg2xuuk9eumf6.jpg",
+        "https://api.travelerapp.ru/upload/uf/ed9/wnp6xpto2h64v7ypebn4cwtgl97pl6vf.jpg"
+      ]
+    }
+  ]
+}

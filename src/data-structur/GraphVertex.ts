@@ -87,9 +87,7 @@ export default class GraphVertex <T>{
         return this.value;
     }
 
-    /**
-     * @return {GraphVertex}
-     */
+
     deleteAllEdges() {
         this.getEdges().forEach((edge) => this.deleteEdge(edge));
 
