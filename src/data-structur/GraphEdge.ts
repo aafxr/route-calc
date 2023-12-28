@@ -1,4 +1,5 @@
-import GraphVertex from "./GraphVertex";
+import { GraphVertexWeight } from '../classes/GraphVertexWeight';
+import GraphVertex from './GraphVertex';
 
 /**
  * @class
@@ -9,36 +10,37 @@ import GraphVertex from "./GraphVertex";
  * @param {number} [weight=1]
  * @constructor
  */
-export default class GraphEdge<T> {
-    startVertex: GraphVertex<T>
-    endVertex: GraphVertex<T>
-    weight: number
-    
-    constructor(startVertex:GraphVertex<T>, endVertex:GraphVertex<T>, weight = 0) {
-        this.startVertex = startVertex;
-        this.endVertex = endVertex;
-        this.weight = weight;
-    }
+export default class GraphEdge<T, K extends {}> {
+  startVertex: GraphVertex<T>;
+  endVertex: GraphVertex<T>;
+  weight: number | GraphVertexWeight<K>;
 
+  constructor(
+    startVertex: GraphVertex<T>,
+    endVertex: GraphVertex<T>,
+    weight: number | GraphVertexWeight<K>
+  ) {
+    this.startVertex = startVertex;
+    this.endVertex = endVertex;
+    this.weight = weight;
+  }
 
-    getKey() {
-        const startVertexKey = this.startVertex.getKey();
-        const endVertexKey = this.endVertex.getKey();
+  getKey() {
+    const startVertexKey = this.startVertex.getKey();
+    const endVertexKey = this.endVertex.getKey();
 
-        return `${startVertexKey}_${endVertexKey}`;
-    }
+    return `${startVertexKey}_${endVertexKey}`;
+  }
 
+  reverse() {
+    const tmp = this.startVertex;
+    this.startVertex = this.endVertex;
+    this.endVertex = tmp;
 
-    reverse() {
-        const tmp = this.startVertex;
-        this.startVertex = this.endVertex;
-        this.endVertex = tmp;
+    return this;
+  }
 
-        return this;
-    }
-
-
-    toString() {
-        return this.getKey();
-    }
+  toString() {
+    return this.getKey();
+  }
 }
